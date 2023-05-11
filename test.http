@@ -1,0 +1,34 @@
+GET http://localhost:8000/login
+apikey: buatsajakodeapapundisini
+Content-Type: application/json
+
+{
+    "email" : "admin-appku@gmail.com",
+    "sandi" : "admin"
+}
+
+####
+
+GET http://localhost:8000/warga
+apikey: buatsajakodeapapundisini
+token: wo0p30HvvjLK0M8T
+userid: 1
+
+###
+
+POST http://localhost:8000/warga
+apikey: buatsajakodeapapundisini
+token: wo0p30HvvjLK0M8T
+Content-Type: application/json
+userid: 1
+
+{
+    "nama_lengkap" : "Black Adam",
+    "gender" : "L",
+    "tgl_lahir": "1981-12-23",
+    "alamat": "Jl. Parit Haji Husein",
+    "lokasi": "0,0",
+}
+
+###
+
