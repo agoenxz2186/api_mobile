@@ -12,8 +12,8 @@ class PenggunaController extends Controller
 {
     
     public function login(){
-        $email = request('email');
-        $sandi = request('sandi');
+        $email = request()->header('email');
+        $sandi = request()->header('sandi');
 
         $hasil = PenggunaModel::query()
                     ->where('email', $email)->first();
