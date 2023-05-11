@@ -45,12 +45,23 @@ return [
 
         'db_warga' => [
             'driver'    => 'mysql',
+            'host'      => '103.247.10.92',
+            'port'      => 3306,
+            'database'  => 'appt1533_datawarga',
+            'username'  => 'appt1533_root',
+            'password'  => 'P@55w0rd!123',
+        ],
+
+        
+        'db_warga_local' => [
+            'driver'    => 'mysql',
             'host'      => 'localhost',
             'port'      => 3306,
             'database'  => 'db_datawarga',
             'username'  => 'root',
             'password'  => '',
         ],
+
 
         'mysql' => [
             'driver' => 'mysql',
