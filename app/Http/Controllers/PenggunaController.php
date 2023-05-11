@@ -20,7 +20,7 @@ class PenggunaController extends Controller
         
         if($hasil == null){
             return response()->json([
-                'pesan' => 'Email pengguna tidak terdaftar'
+                'pesan' => "Email $email pengguna tidak terdaftar"
             ], 404);
 
         }else if( Hash::check($sandi, $hasil->sandi) ){
