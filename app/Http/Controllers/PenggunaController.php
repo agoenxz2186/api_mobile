@@ -35,7 +35,7 @@ class PenggunaController extends Controller
 
             return response()->json([
                 'pesan' => 'email dan Kata sandi tidak cocok'
-            ]);
+            ], 403);
         }
     }
 
