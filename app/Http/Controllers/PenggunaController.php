@@ -55,6 +55,17 @@ class PenggunaController extends Controller
 
     }
 
+    public function show(){
+        $id = request()->user()->id;
+        $p = PenggunaModel::query()->where('id', $id)->first();
+        
+        return response()->json([
+                    'pesan' => $p == null ? 'Pengguna tidak ditemukan' : '',
+                    'data'  => $p
+                ], $p == null ? 404 : 200);
+         
+    }
+
     public function update(){
         $id = request()->user()->id;
         $p = PenggunaModel::query()->where('id', $id)->first();

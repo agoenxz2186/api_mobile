@@ -23,6 +23,7 @@ Route::namespace('App\Http\Controllers')->middleware('cek.apikey')->group(functi
     Route::delete('login', 'PenggunaController@logout');
 
     Route::group(['prefix'=>'pengguna', 'middleware' => ['cek.user']], function(){
+        Route::get('/', 'PenggunaController@show');
         Route::patch('/', 'PenggunaController@update');
         Route::post('/photo', 'PenggunaController@simpan_photo');
         Route::get('/photo', 'PenggunaController@photo');
