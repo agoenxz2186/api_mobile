@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PenggunaModel; 
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Response;
+use App\Models\PenggunaModel;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash; 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -119,9 +119,9 @@ class PenggunaController extends Controller
         
         $foto = Storage::get("foto/$id.jpg");
 
-        return response()->withHeaders([
-            'Content-type' => 'image/jpeg'
-        ])->setContent($foto)->send();
+        return (new Response())
+            ->header('Content-type', 'image/jpeg')
+            ->setContent($foto)->send();
     }
 }
 
