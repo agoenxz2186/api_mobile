@@ -96,7 +96,7 @@ class PenggunaController extends Controller
         $b64foto = request('file_foto');
 
         if(strlen($b64foto) < 1023){
-            return response()->json(['pesan'=>'file foto kurang ukurannya'], 406);
+            return response()->json(['pesan'=>'file foto kurang ukurannya. Ukuran '.strlen($b64foto)], 406);
         }
 
         $foto = base64_decode($b64foto);
